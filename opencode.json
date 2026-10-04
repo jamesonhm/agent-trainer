@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "hevy": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.hevy-mcp.dev/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:HEVY_API_KEY}",
+      }
+    }
+  }
+}

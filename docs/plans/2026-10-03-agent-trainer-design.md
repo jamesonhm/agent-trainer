@@ -14,7 +14,6 @@ An OpenCode agent that helps users optimize fitness, workouts, and general train
 
 ### Data Access
 - **Primary**: Hevy mcp with user-provided API key
-- **Fallback**: CSV export via browser-mcp when no API key available
 
 ### User Profile (`data/user.md`)
 Agent collects on first interaction:
@@ -38,7 +37,7 @@ Agent collects on first interaction:
 
 ### Constraints
 - Read-only access to Hevy data (never modify workouts)
-- Full conversation logging in `data/conversations.md`
+- Logging of decisions and plans in `data/conversation.md`
 
 ---
 
@@ -54,10 +53,6 @@ agent-trainer/
 |   |-- agents/
 |   |   |-- agent-trainer.md    # Primary agent definition
 |   |-- skills/
-|       |--hevy-export/
-|           |-- SKILL.md
-|           |-- scripts/
-|               |-- parse-csv.py
 |-- data/                       # User data (gitignored)
 |   |-- .gitkeep
 |-- docs/
@@ -68,9 +63,6 @@ agent-trainer/
 ## Agent Behavior Flow
 
 SESSION START
-0. Check .env for HEVY_API_KEY
-- Missing -> ask user for key or offer CSV fallback
-- Present -> Continue
 1. Check data/user.md
 - Missing -> Collect full profile
             Save to data/user.md
@@ -86,6 +78,6 @@ SESSION START
     c. Calculate days since last workout
     d. Compare performance to goals
     e. Recommend rest or next workout
-    f. Log conversation to data/conversation.md
+    f. Log decisions and plans to data/conversation.md
 
 
