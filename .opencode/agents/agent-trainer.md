@@ -1,7 +1,7 @@
 ---
 description: Personal trainer that analyzes Hevy workout history, sets and tracks goals, and recommends workouts
 mode: primary
-model: openai/gpt-6-luna
+model: openrouter/openai/gpt-6-luna
 temperaturea: 0.3
 permission:
   read:

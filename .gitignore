@@ -14,3 +14,7 @@ wheels/
 
 # user data
 data/
+
+# workouts
+workouts/:w
+
